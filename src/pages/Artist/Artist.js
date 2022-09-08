@@ -201,6 +201,7 @@ function Artist() {
                         <div className={cx('songs-section')}>
                             {songs.map((song, index) => (
                                 <SongItem
+                                    noticon
                                     data={song}
                                     key={index}
                                     onClick={() => handleGetSong(song, songs, data.encodeId)}

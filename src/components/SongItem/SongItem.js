@@ -11,7 +11,7 @@ import { setIsPlay } from '~/redux/features/audioSlice';
 
 const cx = classNames.bind(styles);
 
-function SongItem({ serial, data, index, type, className, onClick }) {
+function SongItem({ serial, data, index, type, className, onClick, noticon }) {
     const dispatch = useDispatch();
     const isPlay = useSelector((state) => state.audio.isPlay);
     const songId = useSelector((state) => state.audio.songId);
@@ -42,7 +42,7 @@ function SongItem({ serial, data, index, type, className, onClick }) {
         >
             <div className={cx('content-left')}>
                 {serial && <p className={cx('serial', topClass(index))}>{index + 1}</p>}
-                <div className={cx('icon-gridline')}>
+                <div className={cx('icon-gridline', noticon && 'hidden-icon')}>
                     {serial ? <FontAwesomeIcon icon={faGripLines} /> : <FontAwesomeIcon icon={faMusic} />}
                 </div>
                 <div className={cx('avatar')}>

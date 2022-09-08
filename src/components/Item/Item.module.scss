@@ -1,10 +1,7 @@
 .wrapper {
-    flex-shrink: 0;
     width: 100%;
     .img-thumb {
         position: relative;
-        max-height: 200px;
-        max-width: 200px;
         border-radius: 5px;
         overflow: hidden;
         .play {
@@ -22,8 +19,6 @@
         img {
             object-fit: cover;
             width: 100%;
-            max-height: 200px;
-            max-width: 200px;
             transition: transform 0.6s;
             border-radius: 5px;
             &:hover {

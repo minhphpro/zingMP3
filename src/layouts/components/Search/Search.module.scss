@@ -59,6 +59,7 @@
         z-index: 5;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
+        z-index: 999999999 !important;
         .search-title {
             font-size: 14px;
             color: #fff;

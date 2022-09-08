@@ -23,7 +23,6 @@ import SongItem from '~/components/SongItem';
 import SongItemShort from '~/components/SongItemShort';
 import Item from '~/components/Item';
 import Loading from '../Loading';
-import Section from '~/components/Section';
 import { Link } from 'react-router-dom';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 

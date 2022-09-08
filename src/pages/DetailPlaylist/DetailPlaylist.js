@@ -265,6 +265,7 @@ function DetailPlaylist() {
 
                     {data.song.items.map((item) => (
                         <SongItem
+                            noticon
                             key={item.encodeId}
                             data={item}
                             onClick={() => handleGetSong(item, data.song.items, data.encodeId)}

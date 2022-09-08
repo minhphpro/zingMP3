@@ -2,16 +2,15 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
     .info {
+        display: grid;
         background-color: #36264e;
-        display: flex;
+        padding: 100px 4% 30px;
         justify-content: space-between;
-        align-items: center;
-        padding: var(--offset-padding-page);
-        padding-top: 100px;
-        padding-bottom: 30px;
+        grid-template-columns: 2fr 1fr;
         .bio {
-            height: 260px;
+            overflow: hidden;
             color: #fff;
             .name {
                 font-size: 40px;
@@ -19,7 +18,7 @@
             }
             .desc {
                 font-size: 14px;
-                max-width: 580px;
+                max-width: 400px;
                 margin: 15px 0;
             }
             .play-btn {
@@ -31,12 +30,13 @@
             }
         }
         .avatar {
-            display: flex;
-            align-items: center;
+            overflow: hidden;
             img {
-                height: 260px;
-                width: 260px;
                 border-radius: 50%;
+                width: 100%;
+                height: auto;
+                max-height: 260px;
+                max-width: 260px;
                 object-fit: cover;
             }
         }
@@ -44,22 +44,22 @@
     .songs-top {
         height: 290px;
         margin: 30px 0;
+        padding: var(--offset-padding-page);
         .title {
             width: 100%;
             font-size: 20px;
             color: #fff;
             font-weight: 700;
-            padding: var(--offset-padding-page);
         }
         .content {
-            display: flex;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
             margin-top: 20px;
-            padding: var(--offset-padding-page);
             .avatar {
-                width: 30%;
                 img {
-                    width: 240px;
-                    height: 240px;
+                    max-width: 240px;
+                    max-height: 240px;
                 }
             }
             .songs-section::-webkit-scrollbar {
@@ -73,7 +73,6 @@
                 overflow-y: scroll;
                 overflow-x: hidden;
                 height: 250px;
-                width: 70%;
             }
             &:hover {
                 .songs-section::-webkit-scrollbar-thumb {
@@ -83,4 +82,17 @@
         }
     }
 }
-//
+@media screen and (max-width: 876px) {
+    .avatar {
+        display: none;
+    }
+    .content {
+        display: flex !important;
+    }
+    .songs-top {
+        padding: 0 2% !important;
+    }
+    .songs-section {
+        width: 100% !important;
+    }
+}

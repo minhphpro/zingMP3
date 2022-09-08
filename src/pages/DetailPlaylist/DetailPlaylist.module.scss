@@ -1,12 +1,9 @@
 .wrapper {
-    display: flex;
-    justify-content: space-between;
     padding: var(--offset-padding-page);
-    margin-top: 70px;
+    margin-top: var(--offset-header);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     .info {
-        width: 25%;
-        height: 100%;
-        position: fixed;
         .avatar {
             border-radius: 10px;
             max-width: 300px;
@@ -14,6 +11,8 @@
             cursor: pointer;
             position: relative;
             margin: 10px;
+            margin-left: auto;
+            margin-right: auto;
             &.avatar-playing {
                 border-radius: 50%;
             }
@@ -91,8 +90,7 @@
         }
     }
     .content {
-        width: 75%;
-        margin-left: 30%;
+        height: calc(100vh - 70px - 90px);
         overflow-y: scroll;
         .sort-description {
             font-size: 14px;
@@ -145,5 +143,10 @@
         -webkit-transform: rotate(360deg);
         -o-transform: rotate(360deg);
         transform: rotate(360deg);
+    }
+}
+@media screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr !important;
     }
 }
