@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+:root {
+    --primary: #170f23;
+    --text-color: #d5d4d5;
+    --bg-hover-color: #3a3344;
+    --text: #97939c;
+    --font-family: 'Inter';
+    --primary-bg: #432275;
+    --layout-bg: #170f23;
+    --sidebar-popup-bg: #2a213a;
+    --alpha-layout-bg: rgba(41, 21, 71, 0.8);
+    --queue-player-popup-bg: #120822;
+    --blur-queue-bg: rgba(30, 21, 47, 0.9019607843137255);
+    --purple-primary: #7200a1;
+    --link-text-hover: #c662ef;
+    --chart-bg-img-alpha: rgba(32, 19, 53, 0.9);
+    --text-placeholder: #dadada;
+    --navigation-text: #dadada;
+    --sticky-header-box-shadow: rgba(0, 0, 0, 0.1);
+    --portal-menu-box-shadow: rgba(0, 0, 0, 0.2);
+
+    --offset-padding-page: 0 4%;
+    --offset-header: 70px;
+}
+html {
+    color: var(--text-color);
+}
+
+body {
+    .tippy-box {
+        font-family: 'Inter';
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 12px;
+        background-color: #333;
+        color: #fff;
+    }
+
+    .tippy-content {
+        padding: 5px 10px;
+    }
+}
+a {
+    text-decoration: none;
+}
+button {
+    background-color: transparent;
+    border: transparent;
+    outline: none;
+}

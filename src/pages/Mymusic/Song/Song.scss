@@ -1,0 +1,91 @@
+.wrapper-song {
+    .filter {
+        margin: 20px 0;
+        .filter-love,
+        .filter-upload {
+            text-decoration: none;
+            color: #fff;
+            padding: 4px 10px;
+            font-size: 12px;
+            border: 1px solid #fff;
+            border-radius: 999px;
+            margin-right: 20px;
+            &:hover {
+                border: 1px solid #c662ef;
+                color: #c662ef;
+            }
+            &.active {
+                background-color: #7200a1;
+                color: #fff;
+                border: 1px solid #7200a1;
+            }
+        }
+    }
+    .header-media {
+        display: flex;
+        align-items: center;
+        height: 46px;
+        font-size: 12px;
+        font-weight: 500;
+        border-bottom: 1px solid var(--bg-hover-color);
+        color: #97939c;
+        user-select: none;
+        .left {
+            width: 50%;
+            height: 100%;
+            .title-song {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                padding-left: 34px;
+            }
+            .checkall-fields {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                .icon-checkall {
+                    height: 34px;
+                    width: 34px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .add-playlist {
+                    font-size: 10px;
+                    border: 1px solid #97939c;
+                    padding: 2px 10px;
+                    border-radius: 999px;
+                    cursor: pointer;
+                    span {
+                        margin-left: 5px;
+                    }
+                }
+                .icon-more {
+                    height: 22px;
+                    width: 22px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: 1px solid #97939c;
+                    border-radius: 50%;
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+                display: none;
+            }
+            &:hover {
+                .title-song {
+                    display: none;
+                }
+                .checkall-fields {
+                    display: flex;
+                }
+            }
+        }
+        .right {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}

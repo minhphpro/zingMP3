@@ -1,0 +1,15 @@
+.wrapper {
+    margin-top: 20px;
+    padding: var(--offset-padding-page);
+    .option-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .wrapper {
+        padding: 0 2%;
+    }
+}

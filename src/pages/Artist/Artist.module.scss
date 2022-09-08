@@ -1,0 +1,86 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .info {
+        background-color: #36264e;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: var(--offset-padding-page);
+        padding-top: 100px;
+        padding-bottom: 30px;
+        .bio {
+            height: 260px;
+            color: #fff;
+            .name {
+                font-size: 40px;
+                font-weight: 700;
+            }
+            .desc {
+                font-size: 14px;
+                max-width: 580px;
+                margin: 15px 0;
+            }
+            .play-btn {
+                background-color: #7200a1;
+                border-color: transparent;
+            }
+            .icon {
+                margin-right: 10px;
+            }
+        }
+        .avatar {
+            display: flex;
+            align-items: center;
+            img {
+                height: 260px;
+                width: 260px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+        }
+    }
+    .songs-top {
+        height: 290px;
+        margin: 30px 0;
+        .title {
+            width: 100%;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 700;
+            padding: var(--offset-padding-page);
+        }
+        .content {
+            display: flex;
+            margin-top: 20px;
+            padding: var(--offset-padding-page);
+            .avatar {
+                width: 30%;
+                img {
+                    width: 240px;
+                    height: 240px;
+                }
+            }
+            .songs-section::-webkit-scrollbar {
+                width: 4px;
+            }
+            .songs-section::-webkit-scrollbar-thumb {
+                background: transparent;
+                border-radius: 10px;
+            }
+            .songs-section {
+                overflow-y: scroll;
+                overflow-x: hidden;
+                height: 250px;
+                width: 70%;
+            }
+            &:hover {
+                .songs-section::-webkit-scrollbar-thumb {
+                    background: #999;
+                }
+            }
+        }
+    }
+}
+//

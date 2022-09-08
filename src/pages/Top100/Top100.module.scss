@@ -1,0 +1,35 @@
+.wrapper {
+    width: 100%;
+    .banner {
+        position: relative;
+        height: 260px;
+        .bg-blur,
+        .bg-alpha,
+        .bg-alppha1 {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            height: 260px;
+            z-index: 0;
+        }
+        .bg-blur {
+            background: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.28/static/media/banner-100.33cafe6b.png)
+                top/cover no-repeat;
+            -webkit-filter: grayscale(1);
+            filter: grayscale(1);
+        }
+        .bg-alpha {
+            background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 37%, #170f23);
+        }
+        .bg-alpha1 {
+            opacity: 0.8;
+            background-image: linear-gradient(180deg, var(--layout-bg), #170f23);
+        }
+        .bg-img {
+            height: 300px;
+            width: 100%;
+        }
+    }
+}

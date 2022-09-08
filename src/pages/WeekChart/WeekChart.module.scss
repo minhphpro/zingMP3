@@ -1,0 +1,96 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 0 4%;
+    overflow-y: hidden;
+    padding-top: 100px;
+    position: relative;
+    .bg-blur {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 450px;
+        z-index: 0;
+        background: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.28/static/media/week-chart-bg.edf332e5.jpg) 50%
+            center / cover no-repeat;
+        filter: grayscale(1);
+    }
+    .bg-alpha {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 450px;
+        z-index: 0;
+        background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 37%, var(--layout-bg));
+    }
+    .bg-alpha1 {
+        opacity: 0.8;
+        position: absolute;
+        height: 450px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+        background-image: linear-gradient(180deg, var(--layout-bg), var(--layout-bg));
+    }
+    .header {
+        width: 100%;
+        margin-bottom: 10px;
+        z-index: 1;
+        position: relative;
+        .title {
+            h3 {
+                font-size: 40px;
+                font-weight: 800;
+                color: #fff;
+            }
+        }
+        .tab {
+            width: 100%;
+            display: flex;
+            margin: 30px 0;
+            align-items: center;
+            .tab-item {
+                font-size: 24px;
+                text-transform: uppercase;
+                font-weight: 800;
+                color: #fff;
+                margin-right: 35px;
+                padding: 15px 0;
+                border-bottom: 3px solid transparent;
+                &:hover {
+                    color: #fff;
+                }
+            }
+            .active {
+                border-bottom: 3px solid #7200a1;
+            }
+        }
+        .time {
+            background-color: #36303f;
+            border: none;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    .content {
+        height: 55%;
+        overflow-y: scroll;
+        padding-bottom: 10px;
+        z-index: 1;
+        position: relative;
+    }
+    .content::-webkit-scrollbar {
+        width: 4px;
+    }
+    .content::-webkit-scrollbar-thumb {
+        background: #999;
+        border-radius: 10px;
+    }
+}

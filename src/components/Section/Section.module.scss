@@ -1,0 +1,48 @@
+.wrapper {
+    width: 100%;
+    padding: var(--offset-padding-page);
+
+    .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+        .btn-all {
+            font-size: 12px;
+            color: var(--text);
+            text-transform: uppercase;
+        }
+        .icon {
+            color: var(--text);
+            text-transform: uppercase;
+            margin: 0 20px 0 5px;
+        }
+    }
+    .grid {
+        display: grid;
+        grid-template-areas:
+            '. . . . .'
+            '. . . . .';
+        float: left;
+        gap: 16px;
+        // display: flex;
+    }
+}
+// @media screen and (max-width: 1200px) {
+//     .grid {
+//         grid-template-areas:
+//             '. . . . '
+//             '. . . . ' !important;
+//     }
+// }
+// @media screen and (max-width: 768px) {
+//     .grid {
+//         grid-template-areas:
+//             '. . .  '
+//             '. . . ' !important;
+//     }
+// }

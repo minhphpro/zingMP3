@@ -1,0 +1,38 @@
+.wrapper {
+    flex: 1;
+    padding: 0 15px;
+    z-index: 1;
+    .weekchart-box {
+        padding: 20px 10px;
+        background-color: hsla(0, 0%, 100%, 0.05);
+        border-radius: 16px;
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 0 0 10px 40px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: normal;
+            .header-link {
+                color: #fff;
+                text-decoration: none;
+                &:hover {
+                    color: var(--link-text-hover);
+                }
+            }
+        }
+    }
+}
+.content {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.handle {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+}

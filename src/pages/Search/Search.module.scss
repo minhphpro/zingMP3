@@ -1,0 +1,32 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    color: var(--text-primary);
+    padding: var(--offset-padding-page);
+    margin-top: calc(var(--offset-header) + 50px);
+    .header-playlist {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, auto));
+        gap: 10px;
+    }
+    .title {
+        font-size: 20px;
+        display: block;
+        font-weight: 700;
+        color: #fff;
+        margin: 20px 0;
+    }
+    .song {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(490px, auto));
+        gap: 10px;
+        .custom-song {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    }
+}

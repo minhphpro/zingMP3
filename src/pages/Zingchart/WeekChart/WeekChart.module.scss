@@ -1,0 +1,43 @@
+.wrapper {
+    margin-top: 40px;
+    color: #fff;
+    position: relative;
+    .bg-blur {
+        position: absolute;
+        inset: 0px;
+        background: url(https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.28/static/media/week-chart-bg.edf332e5.jpg)
+            center top / cover no-repeat;
+        filter: grayscale(1);
+    }
+    .bg-alpha {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        inset: 0px;
+        background-color: rgba(32, 19, 53, 0.9);
+    }
+    .title {
+        font-size: 40px;
+        padding: 50px 0 0 60px;
+        position: relative;
+    }
+    .area {
+        width: 100%;
+        padding: 4%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30%, auto));
+    }
+}
+@media screen and (max-width: 1200px) {
+    .area {
+        padding: 2% !important;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .area {
+        grid-template-columns: repeat(auto-fit, minmax(100%, auto)) !important;
+        gap: 30px;
+    }
+}
