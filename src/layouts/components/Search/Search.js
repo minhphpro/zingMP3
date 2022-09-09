@@ -88,7 +88,6 @@ function Search() {
         dispatch(setPlaylistRandom([song]));
         dispatch(setLoop(true));
     };
-
     return (
         <div className={cx('wrapper')}>
             <Tippy

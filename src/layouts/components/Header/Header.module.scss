@@ -1,7 +1,7 @@
 .wrapper {
-    height: 70px;
-    width: calc(100% - 240px);
-    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
     padding: 0 4%;
     display: flex;
     align-items: center;

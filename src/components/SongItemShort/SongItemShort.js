@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGripLines, faMusic, faPlay, faArrowRightArrowLeft, faPause } from '@fortawesome/free-solid-svg-icons';
-
+import { faPlay, faArrowRightArrowLeft, faPause } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames/bind';
 import styles from './SongItemShort.module.scss';
 import images from '~/assets';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { setIsPlay } from '~/redux/features/audioSlice';
 
@@ -15,16 +13,6 @@ function SongItemShort({ serial, data, index, type, className, onClick }) {
     const dispatch = useDispatch();
     const isPlay = useSelector((state) => state.audio.isPlay);
     const songId = useSelector((state) => state.audio.songId);
-    const topClass = (index) => {
-        if (index === 0) {
-            return 'top-1';
-        } else if (index === 1) {
-            return 'top-2';
-        } else if (index === 2) {
-            return 'top-3';
-        } else return;
-    };
-
     return data ? (
         <div
             onDoubleClick={onClick}

@@ -25,7 +25,7 @@ function WeekChartItem({ data, name, onClick }) {
                     </Link>
                     {isPlay && playlistId === data.playlistId && (
                         <Button
-                            circlescolor
+                            circles
                             className={cx('play-btn')}
                             onClick={() => {
                                 dispatch(setIsPlay(false));
@@ -36,7 +36,7 @@ function WeekChartItem({ data, name, onClick }) {
                     )}
                     {playlistId !== data.playlistId && (
                         <Button
-                            circlescolor
+                            circles
                             className={cx('play-btn')}
                             onClick={() => {
                                 dispatch(setRandom(false));
@@ -48,7 +48,7 @@ function WeekChartItem({ data, name, onClick }) {
                     )}
                     {!isPlay && playlistId === data.playlistId && (
                         <Button
-                            circlescolor
+                            circles
                             className={cx('play-btn')}
                             onClick={() => {
                                 dispatch(setIsPlay(true));

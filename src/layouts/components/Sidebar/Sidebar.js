@@ -15,12 +15,15 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { SidebarItem } from './Menu';
-import './Sidebar.scss';
+import styles from './Sidebar.module.scss';
+import classNames from 'classnames/bind';
+const cx = classNames.bind(styles);
+
 function Sidebar() {
     return (
-        <div className="wrapper-sidebar">
-            <div className="sidebar-top">
-                <Link className="sidebar-title" to="/"></Link>
+        <div className={cx('wrapper')}>
+            <div className={cx('sidebar-top')}>
+                <Link className={cx('sidebar-title')} to="/"></Link>
                 <SidebarItem title="Cá nhân" to="/mymusic" play="true" icon={<FontAwesomeIcon icon={faFolder} />} />
                 <SidebarItem title="Khám phá" to="/" icon={<FontAwesomeIcon icon={faCompactDisc} />} />
                 <SidebarItem
@@ -32,28 +35,27 @@ function Sidebar() {
                 <SidebarItem title="Radio" to="/radio" icon={<FontAwesomeIcon icon={faRadio} />} />
                 <SidebarItem title="Theo dõi" to="/following" icon={<FontAwesomeIcon icon={faFolder} />} />
             </div>
-            <div className="line">
-                <div className="inner-line"></div>
+            <div className={cx('line')}>
+                <div className={cx('inner-line')}></div>
             </div>
-            <div className="sidebar-bottom">
+            <div className={cx('sidebar-bottom')}>
                 <SidebarItem title="Nhạc mới" to="/newmusic" play="true" icon={<FontAwesomeIcon icon={faMusic} />} />
                 <SidebarItem title="Thể loại" to="/hub" icon={<FontAwesomeIcon icon={faIcons} />} />
                 <SidebarItem title="Top100" to="/top100" icon={<FontAwesomeIcon icon={faStar} />} />
                 <SidebarItem title="MV" to="/mv" icon={<FontAwesomeIcon icon={faClapperboard} />} />
 
-                <div className="box-update">
-                    <div className="title">Nghe nhạc không quảng cáo cùng kho nhạc VIP</div>
-                    <div className="btn-update">
+                <div className={cx('box-update')}>
+                    <div className={cx('title')}>Nghe nhạc không quảng cáo cùng kho nhạc VIP</div>
+                    <div className={cx('btn-update')}>
                         <a href="google.com">NÂNG CẤP VIP</a>
                     </div>
                 </div>
-                <div className="library">
-                    <div className="library-title">
+                <div className={cx('library')}>
+                    <div className={cx('library-title')}>
                         <span>THƯ VIỆN</span>
-                        <span className="pencil">
+                        <span className={cx('pencil')}>
                             <FontAwesomeIcon icon={faPencil} />
                         </span>
-                        <span className="tooltiptext">Chỉnh sửa</span>
                     </div>
                     <SidebarItem
                         title="Bài hát"
@@ -74,8 +76,8 @@ function Sidebar() {
                     <SidebarItem title="Gần đây" to="/mymusic/history" icon={<FontAwesomeIcon icon={faHistory} />} />
                 </div>
             </div>
-            <div className="sidebar-addList">
-                <span className="plus">+</span>
+            <div className={cx('sidebar-addList')}>
+                <span className={cx('plus')}>+</span>
                 <span>Taọ playlist mới</span>
             </div>
         </div>

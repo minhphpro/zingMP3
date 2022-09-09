@@ -1,7 +1,7 @@
 .wrapper {
     width: 100%;
     padding: var(--offset-padding-page);
-    margin-top: calc(var(--offset-header) + 50px);
+    margin-top: calc(var(--offset-top) + 50px);
     .header {
         display: flex;
         align-items: center;

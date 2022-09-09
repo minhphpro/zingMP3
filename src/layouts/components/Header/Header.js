@@ -6,6 +6,7 @@ import styles from './Header.module.scss';
 import { faVuejs } from '@fortawesome/free-brands-svg-icons';
 import Button from '~/components/Buttons';
 const cx = classNames.bind(styles);
+
 function Header() {
     return (
         <div className={cx('wrapper')}>

@@ -26,13 +26,12 @@
     --sticky-header-box-shadow: rgba(0, 0, 0, 0.1);
     --portal-menu-box-shadow: rgba(0, 0, 0, 0.2);
 
+    --offset-top: 70px;
     --offset-padding-page: 0 4%;
-    --offset-header: 70px;
 }
 html {
     color: var(--text-color);
 }
-
 body {
     .tippy-box {
         font-family: 'Inter';

@@ -3,7 +3,7 @@
     height: 100%;
     padding: 0 4%;
     overflow-y: hidden;
-    padding-top: 100px;
+    padding-top: calc(var(--offset-top) + 30px);
     position: relative;
     .bg-blur,
     .bg-alpha,

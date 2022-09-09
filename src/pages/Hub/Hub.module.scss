@@ -1,23 +1,21 @@
 .wrapper {
     width: 100%;
-    margin-top: calc(var(--offset-header) + 30px);
     .img {
         overflow: hidden;
         padding: var(--offset-padding-page);
-        margin-bottom: 40px;
+        padding-top: var(--offset-top);
         img {
             width: 100%;
             object-fit: cover;
         }
     }
     .topic {
-        padding: var(--offset-padding-page);
+        padding: var(--offset-top);
         .btn-more {
             margin-left: 50%;
             transform: translateX(-50%);
             border-color: var(--text);
             font-size: 12px;
-            margin-bottom: 10px;
             &:hover {
                 background-color: transparent;
                 opacity: 0.8;

@@ -4,7 +4,7 @@
     flex-direction: column;
     padding: var(--offset-padding-page);
     position: relative;
-    padding-top: calc(var(--offset-header) + 40px);
+    padding-top: calc(var(--offset-top) + 40px);
     .bg-blur,
     .bg-alpha,
     .bg-alpha1 {

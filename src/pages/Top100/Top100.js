@@ -6,13 +6,12 @@ import styles from './Top100.module.scss';
 import Loading from '../Loading';
 import Section from '~/components/Section';
 import Item from '~/components/Item';
-import ImgTop100 from '~/assets/ImageSVG/ImgTop100';
+// import ImgTop100 from '~/assets/ImageSVG/ImgTop100';
 const cx = classNames.bind(styles);
 
 function Top100() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
     useEffect(() => {
         request.get('/top100').then((res) => {
             console.log(res);
@@ -31,7 +30,7 @@ function Top100() {
                     <div className={cx('bg-blur')}></div>
                     <div className={cx('bg-alpha')}></div>
                     <div className={cx('bg-alpha1')}></div>
-                    <ImgTop100 className={cx('bg-img')} />
+                    {/* <ImgTop100 className={cx('bg-img')} /> */}
                 </div>
                 {data.map((sections, index) => (
                     <Section key={index} title={sections.title}>

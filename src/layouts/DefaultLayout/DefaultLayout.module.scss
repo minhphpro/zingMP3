@@ -10,12 +10,23 @@
         .sidebar {
             width: 240px;
         }
+        .header {
+            width: calc(100% - 240px);
+            height: 70px;
+            background-color: #ccc;
+            background-color: transparent;
+            position: fixed;
+            z-index: 1000;
+            &.sticky {
+                background-color: var(--layout-bg) !important;
+            }
+        }
         .content {
             flex: 1;
             display: flex;
             flex-direction: column;
-            background-color: var(--layout-bg);
             .page {
+                background-color: var(--layout-bg);
                 flex: 1;
                 overflow-y: overlay;
             }
@@ -32,14 +43,14 @@
                     background: #ccc;
                 }
             }
-            .header {
-                z-index: 1;
-            }
         }
     }
 }
 @media screen and (max-width: 1200px) {
     .sidebar {
         width: 70px !important;
+    }
+    .header {
+        width: calc(100% - 70px) !important;
     }
 }

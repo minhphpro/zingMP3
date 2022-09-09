@@ -21,6 +21,13 @@
                     color: var(--link-text-hover);
                 }
             }
+            .play-btn {
+                background-color: #7200a1;
+                margin-left: 10px;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
         }
     }
 }

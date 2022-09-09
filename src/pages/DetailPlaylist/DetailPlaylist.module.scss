@@ -1,6 +1,6 @@
 .wrapper {
-    padding: var(--offset-padding-page);
-    margin-top: var(--offset-header);
+    padding: var(--offset-top);
+    margin-top: var(--offset-padding-page);
     display: grid;
     grid-template-columns: 1fr 2fr;
     .info {

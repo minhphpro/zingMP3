@@ -1,12 +1,12 @@
 .wrapper {
     width: 100%;
-    z-index: 999;
+    background-color: transparent;
     .search-fields {
         width: 100% !important;
         height: 100%;
         position: relative;
         color: #fff;
-        z-index: 1000000000000;
+        z-index: 9;
         .search-input {
             width: 100%;
             height: 40px;

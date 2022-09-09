@@ -84,12 +84,12 @@ function Search() {
 
                 <div className={cx('header-playlist')}>
                     <span className={cx('title')}>Playlist/Album</span>
-                    <Link to="/">
+                    {/* <Link to="/">
                         <span className={cx('btn-all')}>Tất cả</span>
                         <span className={cx('icon')}>
                             <FontAwesomeIcon icon={faAngleRight} />
                         </span>
-                    </Link>
+                    </Link> */}
                 </div>
                 <div className={cx('grid')}>
                     {data.playlists.slice(0, 5).map((playlist, index) => (
