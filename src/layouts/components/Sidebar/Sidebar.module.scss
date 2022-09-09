@@ -126,7 +126,7 @@
     }
 }
 @media screen and (max-width: 1200px) {
-    .wrapper-sidebar {
+    .wrapper {
         .box-update,
         .library-title,
         .sidebar-addList {
@@ -135,7 +135,7 @@
         .sidebar-title {
             height: 70px;
             width: 70px;
-            background-image: url('https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.29/static/media/icon_zing_mp3_60.f6b51045.svg');
+            background-image: url('https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.29/static/media/icon_zing_mp3_60.f6b51045.svg') !important;
             background-size: 60%;
             background-repeat: no-repeat;
             background-position: 50% 50%;

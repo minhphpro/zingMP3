@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlaystation } from '@fortawesome/free-brands-svg-icons';
+import 'tippy.js/dist/tippy.css';
+
 import {
     faChartLine,
     faClapperboard,
@@ -12,8 +16,6 @@ import {
     faRadio,
     faStar,
 } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link } from 'react-router-dom';
 import { SidebarItem } from './Menu';
 import styles from './Sidebar.module.scss';
 import classNames from 'classnames/bind';

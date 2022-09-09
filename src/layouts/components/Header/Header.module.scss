@@ -2,14 +2,12 @@
     height: 100%;
     width: 100%;
     z-index: 100;
-    padding: 0 4%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: var(--offset-padding-page);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     .left {
         display: flex;
         align-items: center;
-        width: 70%;
         flex-shrink: 0;
         .icon {
             width: 15%;
@@ -27,8 +25,6 @@
     .right {
         height: 100%;
         display: flex;
-        flex: 30%;
-        flex-grow: 1;
         align-items: center;
         justify-content: flex-end;
         .icon {
@@ -42,24 +38,17 @@
         }
     }
 }
-@media screen and (max-width: 1200px) {
-    .wrapper {
-        width: calc(100% - 70px);
-    }
-}
 @media screen and (max-width: 1000px) {
-    .upload {
-        display: none;
-    }
     .search-fields {
         min-width: 400px !important;
         max-width: 400px !important;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 876px) {
     .wrapper {
         padding: 0 2%;
-        .icon-row {
+        .icon-row,
+        .upload {
             display: none;
         }
     }
