@@ -7,7 +7,6 @@
         display: grid;
         background-color: #36264e;
         padding: 100px 4% 30px;
-        justify-content: space-between;
         grid-template-columns: 2fr 1fr;
         .bio {
             overflow: hidden;
@@ -31,6 +30,9 @@
         }
         .avatar {
             overflow: hidden;
+            display: flex;
+            justify-content: flex-end;
+            flex-shrink: 0;
             img {
                 border-radius: 50%;
                 width: 100%;
@@ -83,11 +85,14 @@
     }
 }
 @media screen and (max-width: 876px) {
-    .avatar {
-        display: none;
+    .info {
+        grid-template-columns: 1fr 1fr !important;
     }
     .content {
-        display: flex !important;
+        grid-template-columns: 1fr !important;
+        .avatar {
+            display: none;
+        }
     }
     .songs-top {
         padding: 0 2% !important;

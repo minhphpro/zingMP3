@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlaystation } from '@fortawesome/free-brands-svg-icons';
 import 'tippy.js/dist/tippy.css';
-
 import {
     faChartLine,
     faClapperboard,
@@ -25,7 +24,7 @@ function Sidebar() {
     return (
         <div className={cx('wrapper')}>
             <div className={cx('sidebar-top')}>
-                <Link className={cx('sidebar-title')} to="/"></Link>
+                <Link className={cx('title')} to="/"></Link>
                 <SidebarItem title="Cá nhân" to="/mymusic" play="true" icon={<FontAwesomeIcon icon={faFolder} />} />
                 <SidebarItem title="Khám phá" to="/" icon={<FontAwesomeIcon icon={faCompactDisc} />} />
                 <SidebarItem
@@ -45,7 +44,6 @@ function Sidebar() {
                 <SidebarItem title="Thể loại" to="/hub" icon={<FontAwesomeIcon icon={faIcons} />} />
                 <SidebarItem title="Top100" to="/top100" icon={<FontAwesomeIcon icon={faStar} />} />
                 <SidebarItem title="MV" to="/mv" icon={<FontAwesomeIcon icon={faClapperboard} />} />
-
                 <div className={cx('box-update')}>
                     <div className={cx('title')}>Nghe nhạc không quảng cáo cùng kho nhạc VIP</div>
                     <div className={cx('btn-update')}>
@@ -60,22 +58,35 @@ function Sidebar() {
                         </span>
                     </div>
                     <SidebarItem
+                        notactive={true}
                         title="Bài hát"
                         to="/mymusic/song/favorite"
                         icon={<FontAwesomeIcon icon={faMusic} />}
                     />
                     <SidebarItem
+                        notactive={true}
                         title="Playlist"
                         to="/mymusic/library/playlist"
                         icon={<FontAwesomeIcon icon={faPlaystation} />}
                     />
-                    <SidebarItem title="Album" to="/mymusic/album" icon={<FontAwesomeIcon icon={faCompactDisc} />} />
                     <SidebarItem
+                        notactive={true}
+                        title="Album"
+                        to="/mymusic/album"
+                        icon={<FontAwesomeIcon icon={faCompactDisc} />}
+                    />
+                    <SidebarItem
+                        notactive={true}
                         title="Nhạc tải lên"
                         to="/mymusic/song/upload"
                         icon={<FontAwesomeIcon icon={faCloud} />}
                     />
-                    <SidebarItem title="Gần đây" to="/mymusic/history" icon={<FontAwesomeIcon icon={faHistory} />} />
+                    <SidebarItem
+                        notactive={true}
+                        title="Gần đây"
+                        to="/mymusic/history"
+                        icon={<FontAwesomeIcon icon={faHistory} />}
+                    />
                 </div>
             </div>
             <div className={cx('sidebar-addList')}>

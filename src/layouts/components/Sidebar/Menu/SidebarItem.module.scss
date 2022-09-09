@@ -1,4 +1,4 @@
-.sidebar-item {
+.wrapper {
     padding: 7px 25px;
     text-decoration: none;
     color: var(--text-color);
@@ -27,13 +27,16 @@
         background-color: hsla(0, 0%, 100%, 0.1);
         color: #fff;
     }
+    &.not-active {
+        border-left: 3px solid transparent !important;
+        background-color: transparent;
+    }
 }
 .library {
-    .sidebar-item {
+    .wrapper {
         color: var(--text-color);
         &.active {
-            border-left: 3px solid transparent;
-            background-color: transparent;
+            border-left: 3px solid transparent !important;
         }
         &:hover {
             color: #fff;
@@ -41,7 +44,7 @@
     }
 }
 @media screen and (max-width: 1200px) {
-    .sidebar-item {
+    .wrapper {
         width: 70px;
         padding: 15px 0;
         display: flex;
@@ -55,7 +58,6 @@
         &.active {
             border: none;
             background-color: hsla(0, 0%, 100%, 0.1);
-            color: #fff;
         }
     }
 }

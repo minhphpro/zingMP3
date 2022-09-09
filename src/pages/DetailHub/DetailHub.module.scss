@@ -3,8 +3,12 @@
     margin-top: var(--offset-padding-page);
     .banner {
         position: relative;
+        min-height: 200px;
+        max-height: 300px;
+        overflow: hidden;
         img {
             width: 100%;
+            height: auto;
         }
         .overlay {
             position: absolute;

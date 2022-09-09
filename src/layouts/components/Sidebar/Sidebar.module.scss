@@ -1,15 +1,7 @@
 .wrapper {
     width: 240px;
-    height: 100%;
-    background-color: #231b2e;
-    .sidebar-title {
-        height: 70px;
-        width: 100%;
-        background-image: url('https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg');
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: 25% 50%;
-    }
+    height: 100vh;
+    background-color: #2a213a;
     .sidebar-top,
     .sidebar-bottom,
     .library {
@@ -22,17 +14,25 @@
     }
     .line {
         height: 22px;
-        width: 100%;
-        padding: 0 25px;
         display: flex;
+        align-items: center;
         justify-content: center;
-        flex-direction: column;
         .inner-line {
+            width: 80%;
             border-bottom: 1px solid var(--bg-hover-color);
         }
     }
     .sidebar-top {
-        flex: 1;
+        height: calc(185px + 70px);
+        .title {
+            flex-shrink: 0;
+            height: 70px;
+            width: 100%;
+            background-image: url('https://zmp3-static.zmdcdn.me/skins/zmp3-v6.1/images/backgrounds/logo-dark.svg');
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: 25% 50%;
+        }
     }
     .sidebar-bottom::-webkit-scrollbar {
         width: 4px;
@@ -42,8 +42,8 @@
         border-radius: 10px;
     }
     .sidebar-bottom {
-        height: 247px;
         width: 100%;
+        height: calc(100vh - (70px + 185px + 70px + 22px + 20px + 54px));
         overflow-y: overlay;
         overflow-x: hidden;
         .box-update {
@@ -132,13 +132,24 @@
         .sidebar-addList {
             display: none !important;
         }
-        .sidebar-title {
-            height: 70px;
+        .line {
             width: 70px;
+            .inner-line {
+                width: 60%;
+            }
+        }
+        .title {
             background-image: url('https://zjs.zmdcdn.me/zmp3-desktop/releases/v1.7.29/static/media/icon_zing_mp3_60.f6b51045.svg') !important;
-            background-size: 60%;
+            background-size: 20% !important;
             background-repeat: no-repeat;
-            background-position: 50% 50%;
+            background-position: 5% 50% !important;
+        }
+        .sidebar-top {
+            height: calc(255px + 70px);
+        }
+        .sidebar-bottom {
+            width: 100%;
+            height: calc(100vh - (70px + 255px + 70px + 22px + 20px));
         }
     }
 }
