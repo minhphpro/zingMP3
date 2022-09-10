@@ -7,11 +7,9 @@ const cx = classNames.bind(styles);
 
 function Loading() {
     return (
-        <div className={cx('container')}>
-            <div className={cx('content')}>
-                <h2>Loading</h2>
-                <FontAwesomeIcon icon={faSpinner} className={cx('loading-icon')} />
-            </div>
+        <div className={cx('wrapper')}>
+            <h2>Loading</h2>
+            <FontAwesomeIcon icon={faSpinner} className={cx('loading-icon')} />
         </div>
     );
 }

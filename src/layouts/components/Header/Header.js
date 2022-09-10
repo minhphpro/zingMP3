@@ -38,8 +38,8 @@ function Header() {
                 </Button>
                 <Button circlem="true" className={cx('icon', 'img')}>
                     <img
-                        src="https://media.istockphoto.com/vectors/user-vector-id1138452882?k=6&m=1138452882&s=170667a&w=0&h=H31QWhznYhdGblAJX6Pp6RHcS6d6xF13D5L6wNJOQmc="
-                        alt="bc"
+                        src="https://s120-ava-talk-zmp3.zmdcdn.me/c/f/5/9/36/120/d7e2c9af9754c1305c6163278f0824c8.jpg"
+                        alt="logo"
                     />
                 </Button>
             </div>
