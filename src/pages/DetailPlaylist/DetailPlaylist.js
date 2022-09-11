@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import request from '~/utils/httpRequest';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlayCircle, faPlay, faPause, faPauseCircle } from '@fortawesome/free-solid-svg-icons';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 
 import classNames from 'classnames/bind';
 import styles from './DetailPlaylist.module.scss';

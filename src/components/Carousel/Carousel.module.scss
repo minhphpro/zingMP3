@@ -1,0 +1,22 @@
+.container {
+    display: block;
+    margin-right: -15px;
+    width: 100%;
+    max-width: 1000px;
+    background-color: transparent;
+    border-radius: 8px;
+}
+
+.casourel-list {
+    margin: 0 -15px;
+}
+
+.next-btn,
+.prev-btn {
+    display: inline;
+}
+
+.carousel-item {
+    padding: 15px;
+    cursor: pointer;
+}
