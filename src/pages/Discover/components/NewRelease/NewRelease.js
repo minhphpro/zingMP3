@@ -31,15 +31,7 @@ function CarouselItem({ className, data }) {
         });
     };
 
-    return data.type === 4 ? (
-        <Link key={data.encodeId} className={cx('wrapper')} to={data.link} state={{ id: data.encodeId }}>
-            <img src={data.banner} alt={data.encodeId} className={cx('carousel-img')} />
-        </Link>
-    ) : (
-        <div key={data.encodeId} className={cx('wrapper')} onClick={() => onClickItem(data.encodeId)}>
-            <img src={data.banner} alt={data.encodeId} className={cx('carousel-img')} />
-        </div>
-    );
+    return <div></div>;
 }
 
 export default CarouselItem;

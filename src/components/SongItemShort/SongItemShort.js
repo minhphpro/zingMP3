@@ -9,7 +9,7 @@ import { setIsPlay } from '~/redux/features/audioSlice';
 
 const cx = classNames.bind(styles);
 
-function SongItemShort({ serial, data, index, type, className, onClick }) {
+function SongItemShort({ data, index, type, className, onClick }) {
     const dispatch = useDispatch();
     const isPlay = useSelector((state) => state.audio.isPlay);
     const songId = useSelector((state) => state.audio.songId);
@@ -28,36 +28,36 @@ function SongItemShort({ serial, data, index, type, className, onClick }) {
                 songId === data.encodeId && 'playing',
             )}
         >
-            <div className={cx('content-left')}>
-                <div className={cx('avatar')}>
-                    <img src={data.thumbnail} alt={data.alias} />
+            <div className={cx('avatar')}>
+                <img src={data.thumbnail} alt={data.alias} />
 
-                    {songId === data.encodeId && isPlay ? (
-                        <div onClick={() => dispatch(setIsPlay(false))} className={cx('song-play')}>
-                            <FontAwesomeIcon icon={faPause} />
-                        </div>
-                    ) : (
-                        ''
-                    )}
-                    {songId === data.encodeId && isPlay === false ? (
-                        <div onClick={() => dispatch(setIsPlay(true))} className={cx('song-play')}>
-                            <FontAwesomeIcon icon={faPlay} />
-                        </div>
-                    ) : (
-                        ''
-                    )}
-                    {songId !== data.encodeId ? (
-                        <div onClick={onClick} className={cx('song-play')}>
-                            <FontAwesomeIcon icon={faPlay} />
-                        </div>
-                    ) : (
-                        ''
-                    )}
-                </div>
-                <div className={cx('info')}>
-                    <div className={cx('song-title')}>
-                        <span className={cx('title')}>Bài hát</span>
-                        <span className={cx('name')}>{data.title}</span>
+                {songId === data.encodeId && isPlay ? (
+                    <div onClick={() => dispatch(setIsPlay(false))} className={cx('song-play')}>
+                        <FontAwesomeIcon icon={faPause} />
+                    </div>
+                ) : (
+                    ''
+                )}
+                {songId === data.encodeId && isPlay === false ? (
+                    <div onClick={() => dispatch(setIsPlay(true))} className={cx('song-play')}>
+                        <FontAwesomeIcon icon={faPlay} />
+                    </div>
+                ) : (
+                    ''
+                )}
+                {songId !== data.encodeId ? (
+                    <div onClick={onClick} className={cx('song-play')}>
+                        <FontAwesomeIcon icon={faPlay} />
+                    </div>
+                ) : (
+                    ''
+                )}
+            </div>
+            <div className={cx('info')}>
+                <div className={cx('song-title')}>
+                    <span className={cx('title')}>Bài hát</span>
+                    <div className={cx('name')}>
+                        <span>{data.title}</span>
                         {(data.streamingStatus === 1 && data.isWorldWide === true) || data.type === 'livestream' ? (
                             ''
                         ) : (
@@ -66,24 +66,20 @@ function SongItemShort({ serial, data, index, type, className, onClick }) {
                             </span>
                         )}
                     </div>
-                    <div className={cx('artists')}>
-                        {data.artists ? (
-                            data.artists.map((artist, index) => (
-                                <span key={artist.id}>
-                                    <Link
-                                        to={artist.link}
-                                        className={cx('singers')}
-                                        state={{ artistName: artist.alias }}
-                                    >
-                                        {artist.name}
-                                    </Link>
-                                    {index + 1 === data.artists.length ? '' : ', '}
-                                </span>
-                            ))
-                        ) : (
-                            <span className={cx('artists')}>{data.artistsNames}</span>
-                        )}
-                    </div>
+                </div>
+                <div className={cx('artists')}>
+                    {data.artists ? (
+                        data.artists.map((artist, index) => (
+                            <span key={artist.id}>
+                                <Link to={artist.link} className={cx('singers')} state={{ artistName: artist.alias }}>
+                                    {artist.name}
+                                </Link>
+                                {index + 1 === data.artists.length ? '' : ', '}
+                            </span>
+                        ))
+                    ) : (
+                        <span className={cx('artists')}>{data.artistsNames}</span>
+                    )}
                 </div>
             </div>
         </div>

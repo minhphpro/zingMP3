@@ -22,6 +22,7 @@ import {
     setCurrnetIndexSong,
     setCurrentIndexSongRandom,
     setRandom,
+    setIsDisabled,
 } from '~/redux/features/audioSlice';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
@@ -77,6 +78,7 @@ function Zingchart() {
                 dispatch(setCurrnetIndexSong(playlistCanPlay.findIndex((item) => item.encodeId === song.encodeId)));
                 dispatch(setCurrentIndexSongRandom(-1));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             } else {
                 dispatch(setCurrentIndexSongRandom(-1));
                 dispatch(setInfoSongPlayer(song));
@@ -84,6 +86,7 @@ function Zingchart() {
                 dispatch(setPlaylistSong(playlistCanPlay));
                 dispatch(setCurrnetIndexSong(playlistCanPlay.findIndex((item) => item.encodeId === song.encodeId)));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             }
         } else {
             alert('This is vip song');

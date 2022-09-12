@@ -5,6 +5,7 @@ const initialState = {
     isPlay: false,
     isRadioPlay: false,
     isMute: false,
+    isDisabled: JSON.parse(localStorage.getItem('disabled')) || false,
     songId: localStorage.getItem('songId') || '',
     playlistId: localStorage.getItem('playlistId') || '',
     currentIndexSong: 0,
@@ -17,7 +18,7 @@ const initialState = {
         duration: 0,
     },
     srcAudio: '',
-    srcRadio: '',
+    srcRadio: JSON.parse(localStorage.getItem('srcRadio')) || '',
     currentTime: 0,
     duration: 0,
     volume: JSON.parse(localStorage.getItem('volume')) || 100,
@@ -40,6 +41,10 @@ const audioSlice = createSlice({
         setIsRadioPlay: (state, action) => {
             state.isRadioPlay = action.payload;
         },
+        setIsDisabled: (state, action) => {
+            state.isDisabled = action.payload;
+            localStorage.setItem('disabled', JSON.stringify(action.payload));
+        },
         changeIconVolume: (state, action) => {
             state.isMute = action.payload;
         },
@@ -60,6 +65,7 @@ const audioSlice = createSlice({
         },
         setSrcRadio: (state, action) => {
             state.srcRadio = action.payload;
+            localStorage.setItem('srcRadio', JSON.stringify(action.payload));
         },
         setCurrentTime: (state, action) => {
             state.currentTime = action.payload;
@@ -107,6 +113,7 @@ const audioSlice = createSlice({
 
 export const {
     setIsPlay,
+    setIsDisabled,
     changeIconVolume,
     setSongId,
     setInfoSongPlayer,

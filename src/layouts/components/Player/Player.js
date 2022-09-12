@@ -5,6 +5,8 @@ import classNames from 'classnames/bind';
 import styles from './Player.module.scss';
 import Button from '../../../components/Buttons';
 import request from '~/utils/httpRequest';
+import ReactHlsPlayer from 'react-hls-player';
+
 import { faWindows } from '@fortawesome/free-brands-svg-icons';
 import {
     faShuffle,
@@ -45,6 +47,7 @@ function Player() {
     let currentIndexSongRandom = useSelector((state) => state.audio.currentIndexSongRandom);
     const songInfo = useSelector((state) => state.audio.infoSongPlayer);
     const isPlay = useSelector((state) => state.audio.isPlay);
+    const isDisabled = useSelector((state) => state.audio.isDisabled);
     const isLoop = useSelector((state) => state.audio.isLoop);
     const isRandom = useSelector((state) => state.audio.isRandom);
     const playlistSong = [...useSelector((state) => state.audio.playlistSong)];
@@ -58,29 +61,29 @@ function Player() {
     const radioRef = useRef();
 
     const handlePlaySong = () => {
-        if (isPlay) {
-            dispatch(setIsPlay(false));
-            if (audioRef) {
-                audioRef.current.pause();
+        if (!isDisabled) {
+            if (isPlay) {
+                dispatch(setIsPlay(false));
+                if (audioRef) {
+                    audioRef.current.pause();
+                }
+            } else {
+                dispatch(setIsPlay(true));
+                if (audioRef) {
+                    audioRef.current.play();
+                }
             }
-        } else {
-            dispatch(setIsPlay(true));
-            if (audioRef) {
-                audioRef.current.play();
-            }
-        }
-    };
-
-    const handlePlayRadio = () => {
-        if (isRadioPlay) {
-            dispatch(setIsRadioPlay(false));
-            if (radioRef) {
-                radioRef.current.pause();
-            }
-        } else {
-            dispatch(setIsRadioPlay(true));
-            if (radioRef) {
-                radioRef.current.play();
+        } else if (isDisabled) {
+            if (isRadioPlay) {
+                dispatch(setIsRadioPlay(false));
+                if (radioRef) {
+                    radioRef.current.pause();
+                }
+            } else {
+                dispatch(setIsRadioPlay(true));
+                if (radioRef) {
+                    radioRef.current.play();
+                }
             }
         }
     };
@@ -266,50 +269,58 @@ function Player() {
                     </p>
                 </div>
             </div>
-
             <div className={cx('control')}>
                 <div className={cx('handler')}>
-                    <Button circles="true" className={cx(isRandom && 'active')} onClick={handleRandom}>
+                    <Button
+                        circles="true"
+                        className={cx(isRandom && 'active', isDisabled && 'disabled')}
+                        onClick={handleRandom}
+                    >
                         <FontAwesomeIcon icon={faShuffle} />
                     </Button>
-                    <Button circles="true" onClick={handlePrevSong}>
+                    <Button circles="true" onClick={handlePrevSong} className={cx(isDisabled && 'disabled')}>
                         <FontAwesomeIcon icon={faBackwardStep} />
                     </Button>
                     <Button circlem="true" className={cx('play')} onClick={handlePlaySong}>
-                        {isPlay ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
+                        {isPlay || isRadioPlay ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
                     </Button>
-                    <Button circles="true" className={cx('')} onClick={handleNextSong}>
+                    <Button circles="true" className={cx(isDisabled && 'disabled')} onClick={handleNextSong}>
                         <FontAwesomeIcon icon={faForwardStep} />
                     </Button>
-                    <Button circles="true" className={cx(isLoop && 'active')} onClick={handleLoop}>
+                    <Button
+                        circles="true"
+                        className={cx(isLoop && 'active', isDisabled && 'disabled')}
+                        onClick={handleLoop}
+                    >
                         <FontAwesomeIcon icon={faRepeat} />
                     </Button>
                 </div>
 
-                <div className={cx('range')}>
-                    <span className={cx('time')}>
-                        {Math.floor(currentTime / 60) < 10
-                            ? '0' + Math.floor(currentTime / 60)
-                            : Math.floor(currentTime / 60)}
-                        :{currentTime % 60 < 10 ? '0' + (currentTime % 60) : currentTime % 60}
-                    </span>
-                    <input
-                        value={currentTime}
-                        type="range"
-                        className={cx('song-progress')}
-                        min={0}
-                        max={songInfo.duration}
-                        onChange={(e) => handleChangeProgressSong(e.target.value)}
-                    />
-                    <span className={cx('time')}>
-                        {Math.floor(songInfo.duration / 60) < 10
-                            ? '0' + Math.floor(songInfo.duration / 60)
-                            : Math.floor(songInfo.duration / 60)}
-                        :{songInfo.duration % 60 < 10 ? '0' + (songInfo.duration % 60) : songInfo.duration % 60}
-                    </span>
-                </div>
+                {!isDisabled && (
+                    <div className={cx('range')}>
+                        <span className={cx('time')}>
+                            {Math.floor(currentTime / 60) < 10
+                                ? '0' + Math.floor(currentTime / 60)
+                                : Math.floor(currentTime / 60)}
+                            :{currentTime % 60 < 10 ? '0' + (currentTime % 60) : currentTime % 60}
+                        </span>
+                        <input
+                            value={currentTime}
+                            type="range"
+                            className={cx('song-progress')}
+                            min={0}
+                            max={songInfo.duration}
+                            onChange={(e) => handleChangeProgressSong(e.target.value)}
+                        />
+                        <span className={cx('time')}>
+                            {Math.floor(songInfo.duration / 60) < 10
+                                ? '0' + Math.floor(songInfo.duration / 60)
+                                : Math.floor(songInfo.duration / 60)}
+                            :{songInfo.duration % 60 < 10 ? '0' + (songInfo.duration % 60) : songInfo.duration % 60}
+                        </span>
+                    </div>
+                )}
             </div>
-
             <div className={cx('option')}>
                 <Button circles="true">
                     <FontAwesomeIcon icon={faClapperboard} />
@@ -344,7 +355,6 @@ function Player() {
                     </span>
                 </Button>
             </div>
-
             <audio
                 loop={isLoop}
                 ref={audioRef}
@@ -357,6 +367,7 @@ function Player() {
                 }}
                 onEnded={handleOnEnd}
             />
+            <ReactHlsPlayer hidden src={srcRadio} autoPlay={isRadioPlay} playerRef={radioRef} volume={volume} />
         </div>
     );
 }

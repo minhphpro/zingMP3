@@ -22,6 +22,7 @@ import {
     setCurrnetIndexSong,
     setCurrentIndexSongRandom,
     setRandom,
+    setIsDisabled,
 } from '~/redux/features/audioSlice';
 
 const cx = classNames.bind(styles);
@@ -65,6 +66,7 @@ function NewMusic() {
                 dispatch(setCurrnetIndexSong(playlistCanPlay.findIndex((item) => item.encodeId === song.encodeId)));
                 dispatch(setCurrentIndexSongRandom(-1));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             } else {
                 dispatch(setCurrentIndexSongRandom(-1));
                 dispatch(setInfoSongPlayer(song));
@@ -72,6 +74,7 @@ function NewMusic() {
                 dispatch(setPlaylistSong(playlistCanPlay));
                 dispatch(setCurrnetIndexSong(playlistCanPlay.findIndex((item) => item.encodeId === song.encodeId)));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             }
         } else {
             alert('This is vip song');

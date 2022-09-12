@@ -25,6 +25,7 @@ import {
     setPlaylistRandom,
     setCurrentIndexSongRandom,
     setCurrnetIndexSong,
+    setIsDisabled,
 } from '~/redux/features/audioSlice';
 import Section from '~/components/Section';
 import Item from '~/components/Item';
@@ -83,6 +84,7 @@ function Artist() {
                 dispatch(setCurrnetIndexSong(playlistCanPlay.findIndex((item) => item.encodeId === song.encodeId)));
                 dispatch(setCurrentIndexSongRandom(-1));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             } else {
                 dispatch(setCurrentIndexSongRandom(-1));
                 dispatch(setInfoSongPlayer(song));
@@ -90,12 +92,14 @@ function Artist() {
                 dispatch(setPlaylistSong(playlistCanPlay));
                 dispatch(setCurrnetIndexSong(playlistCanPlay.findIndex((item) => item.encodeId === song.encodeId)));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             }
         } else {
             alert('This is vip song');
         }
     };
     const handlePlayRandom = async (playlist, id) => {
+        dispatch(setIsDisabled(false));
         let songsCanPlay = [];
         let randomIndex;
 
@@ -121,6 +125,7 @@ function Artist() {
             dispatch(setCurrnetIndexSong(randomIndex));
             dispatch(setCurrentIndexSongRandom(-1));
             dispatch(setRandom(true));
+            dispatch(setIsDisabled(false));
         }
     };
 

@@ -59,6 +59,11 @@
                     border-color: currentColor;
                 }
             }
+            .disabled {
+                color: var(--bg-hover-color);
+                background-color: transparent;
+                pointer-events: none;
+            }
         }
         .range {
             margin-top: 10px;
@@ -76,6 +81,9 @@
             .time {
                 font-size: 12px;
                 color: var(--text);
+            }
+            &.d-none {
+                display: none;
             }
         }
     }

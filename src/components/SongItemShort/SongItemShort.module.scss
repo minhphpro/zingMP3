@@ -1,66 +1,30 @@
 .wrapper {
     display: flex;
     align-items: center;
-    height: 60px;
     border-radius: 4px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 0 20px;
-    max-width: 318px;
-    min-height: 104px;
-    background-color: hsla(0, 0%, 100%, 0.05);
-    &:hover {
-        background-color: hsla(0, 0%, 100%, 0.1);
-    }
-    &:hover .song-play {
-        display: flex;
-    }
-    &.no-content:hover {
-        background-color: transparent;
-    }
-}
-.wrapper.playing {
-    background-color: hsla(0, 0%, 100%, 0.1);
-    .song-play {
-        display: flex;
-    }
-}
-.mini.wrapper {
-    .icon-gridline {
-        display: none;
-    }
-    .content-left {
-        flex: 1;
-    }
-    .content-center {
-        display: none;
-    }
-    .artists,
-    .song-title {
-        max-width: 100px;
-    }
-    border-bottom: 1px solid transparent;
-}
-
-.content-left {
-    display: flex;
-    align-items: center;
+    padding: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     .avatar {
-        width: 84px;
-        height: 84px;
+        height: 60px;
+        width: 60px;
         border-radius: 5px;
         margin-right: 12px;
         position: relative;
         border-radius: 4px;
-        background-color: transparent;
         cursor: pointer;
         overflow: hidden;
+        flex-shrink: 0;
         img {
-            width: 84px;
+            width: 100%;
+            height: auto;
             display: block;
             object-fit: cover;
             border-radius: 5px;
         }
     }
+
     .song-play {
         position: absolute;
         background-color: rgba(0, 0, 0, 0.5);
@@ -73,6 +37,9 @@
         z-index: 20;
     }
     .info {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         .song-title {
             display: flex;
             flex-direction: column;
@@ -80,17 +47,21 @@
             color: #fff;
             font-weight: 500;
             line-height: 18px;
-            width: 200px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-            overflow: hidden;
             .title {
                 font-size: 12px;
                 color: var(--text);
             }
+            .name {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
             .vip-label {
                 margin-left: 8px;
             }
+        }
+        .vip-label {
+            display: inline-flex;
         }
         .artists {
             font-size: 12px;
@@ -107,5 +78,17 @@
                 }
             }
         }
+    }
+    &:hover {
+        background-color: hsla(0, 0%, 100%, 0.1);
+    }
+    &:hover .song-play {
+        display: flex;
+    }
+}
+.wrapper.playing {
+    background-color: hsla(0, 0%, 100%, 0.1);
+    .song-play {
+        display: flex;
     }
 }

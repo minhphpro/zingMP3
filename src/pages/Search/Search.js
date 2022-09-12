@@ -12,6 +12,7 @@ import {
     setRandom,
     setSrcAudio,
     setCurrentTime,
+    setIsDisabled,
 } from '~/redux/features/audioSlice';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -36,6 +37,7 @@ function Search() {
     const dispatch = useDispatch();
 
     const handlePlaySong = (song) => {
+        dispatch(setIsDisabled(false));
         dispatch(setSrcAudio(''));
         dispatch(setCurrentTime(0));
         dispatch(setIsRadioPlay(false));
@@ -84,12 +86,6 @@ function Search() {
 
                 <div className={cx('header-playlist')}>
                     <span className={cx('title')}>Playlist/Album</span>
-                    {/* <Link to="/">
-                        <span className={cx('btn-all')}>Tất cả</span>
-                        <span className={cx('icon')}>
-                            <FontAwesomeIcon icon={faAngleRight} />
-                        </span>
-                    </Link> */}
                 </div>
                 <div className={cx('grid')}>
                     {data.playlists.slice(0, 5).map((playlist, index) => (

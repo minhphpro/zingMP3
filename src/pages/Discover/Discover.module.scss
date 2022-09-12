@@ -1,6 +1,39 @@
 .wrapper {
-    margin-top: calc(var(--offset-top) + 50px);
-    .carousel {
-        // padding: var(--offset-padding-page);
+    margin-top: calc(var(--offset-top) + 30px);
+    .new-release {
+        padding: var(--offset-padding-page);
+        margin: 30px 0;
+        h3 {
+            color: #fff;
+            font-size: 20px;
+        }
+        .header {
+            margin: 20px 0;
+            .btn {
+                margin-right: 20px;
+                border-color: var(--bg-hover-color);
+                text-transform: uppercase;
+                &.active {
+                    background-color: #670091;
+                    border-color: #670091;
+                }
+            }
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            column-gap: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 876px) {
+    .grid {
+        grid-template-columns: 1fr 1fr !important;
+    }
+}
+@media screen and (max-width: 576px) {
+    .grid {
+        grid-template-columns: 1fr !important;
     }
 }

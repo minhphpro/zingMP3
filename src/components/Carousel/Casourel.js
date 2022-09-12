@@ -6,7 +6,8 @@ import classNames from 'classnames/bind';
 import styles from './Carousel.module.scss';
 
 import CarouselItem from './CarouselItem';
-// import { NextButton, PrevButton } from '~/components/Button/SlideButton';
+import ArrowLeft from './ArrowLeft';
+import ArrowRight from './ArrowRight';
 
 const cx = classNames.bind(styles);
 
@@ -25,8 +26,8 @@ function Carousel({ data }) {
         styles: {
             backgroundColor: 'transparent',
         },
-        // nextArrow: <NextButton />,
-        // prevArrow: <PrevButton />,
+        nextArrow: <ArrowRight />,
+        prevArrow: <ArrowLeft />,
         responsive: [
             {
                 breakpoint: 1200,
@@ -49,19 +50,19 @@ function Carousel({ data }) {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    nextArrow: 0,
-                    prevArrow: 0,
+                    arrows: false,
+                    dots: true,
                 },
             },
         ],
     };
 
     return (
-        <div className={cx('container')}>
-            <Slider {...settings} className={cx('casourel-list')}>
+        <div className={cx('wrapper')}>
+            <Slider {...settings}>
                 {sliderItems.map((sliderItem) =>
                     sliderItem.type === 1 || sliderItem.type === 4 ? (
-                        <CarouselItem key={sliderItem.encodeId} data={sliderItem} className={cx('carousel-item')} />
+                        <CarouselItem key={sliderItem.encodeId} data={sliderItem} />
                     ) : (
                         ''
                     ),

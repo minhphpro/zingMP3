@@ -24,6 +24,7 @@ import {
     setCurrentIndexSongRandom,
     setCurrentTime,
     setSrcAudio,
+    setIsDisabled,
 } from '~/redux/features/audioSlice';
 import Loading from '../Loading';
 
@@ -99,6 +100,7 @@ function DetailPlaylist() {
                 dispatch(setCurrnetIndexSong(getCurrentIndexSong(playlistCanPlay, song)));
                 dispatch(setCurrentIndexSongRandom(-1));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             } else {
                 dispatch(setPlaylistRandom(playlistCanPlay));
                 dispatch(setCurrentIndexSongRandom(-1));
@@ -107,6 +109,7 @@ function DetailPlaylist() {
                 dispatch(setPlaylistSong(playlistCanPlay));
                 dispatch(setCurrnetIndexSong(getCurrentIndexSong(playlistCanPlay, song)));
                 dispatch(setIsPlay(true));
+                dispatch(setIsDisabled(false));
             }
         } else {
             alert('This is vip song');
@@ -114,13 +117,13 @@ function DetailPlaylist() {
     };
 
     const handlePlaylist = () => {
+        dispatch(setIsDisabled(false));
         isPlay ? dispatch(setIsPlay(false)) : dispatch(setIsPlay(true));
     };
 
     const handlePlayRandom = async (playlist, id) => {
         let songsCanPlay = [];
         let randomIndex;
-
         for (var i = 0; i < playlist.length; i++) {
             if (playlist[i].streamingStatus === 1 && playlist[i].isWorldWide) {
                 await songsCanPlay.push(playlist[i]);
@@ -143,6 +146,7 @@ function DetailPlaylist() {
             dispatch(setCurrnetIndexSong(randomIndex));
             dispatch(setCurrentIndexSongRandom(-1));
             dispatch(setRandom(true));
+            dispatch(setIsDisabled(false));
         }
     };
 
